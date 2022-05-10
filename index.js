@@ -7,13 +7,20 @@ const app = express();
 // app.put()
 // app.delete()
 
+const pokemon = ["charmander", "bulbasaur", "squirtle"];
+
 app.get("/", (req, res) => {
   res.send("Hello!");
 });
 //the "/" is just for the end of the url
 
 app.get("/pokemon", (req, res) => {
-  res.send(["charmander", "bulbasaur", "squirtle"]);
+  res.send(pokemon);
+});
+//the "/pokemon" mean that if you go to the url + pokemon you'll be sent the array
+
+app.get("/pokemon/1", (req, res) => {
+  res.send(pokemon[0]);
 });
 //the "/pokemon" mean that if you go to the url + pokemon you'll be sent the array
 
