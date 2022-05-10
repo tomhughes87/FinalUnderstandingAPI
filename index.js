@@ -1,4 +1,5 @@
 const express = require("express");
+const req = require("express/lib/request");
 const app = express();
 
 // standard app methods are:
@@ -42,6 +43,10 @@ const boardgames = [
   { name: "catan", players: "3-6", time: "1hr" },
   { name: "Small world", players: "2-6", time: "1hr 30mins" },
 ];
+
+app.get("/boardgames", (req, res) => {
+  res.send(boardgames);
+});
 
 app.listen(3000, () => console.log("Server is live on port 3000!"));
 //test this with "node index.js"
