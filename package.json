@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/tomhughes87/FinalUnderstandingAPI/issues"
   },
-  "homepage": "https://github.com/tomhughes87/FinalUnderstandingAPI#readme"
+  "homepage": "https://github.com/tomhughes87/FinalUnderstandingAPI#readme",
+  "dependencies": {
+    "nodemon": "^2.0.16"
+  }
 }
