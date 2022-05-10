@@ -19,10 +19,10 @@ app.get("/pokemon", (req, res) => {
 });
 //the "/pokemon" mean that if you go to the url + pokemon you'll be sent the array
 
-app.get("/pokemon/1", (req, res) => {
-  res.send(pokemon[0]);
+app.get("/pokemon/:id", (req, res) => {
+  res.send(pokemon[req.params.id - 1]);
 });
-//the "/pokemon" mean that if you go to the url + pokemon you'll be sent the array
+// using ':' followed by text creates a var that can be used in req.params+...var
 
 app.listen(3000, () => console.log("Server is live on port 3000!"));
 //test this with "node index.js"
