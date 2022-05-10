@@ -48,6 +48,19 @@ app.get("/boardgames", (req, res) => {
   res.send(boardgames);
 });
 
+app.get("/boardgames/:id", (req, res) => {
+  const theGame = boardgames[req.params.id - 1];
+  console.log("the game is:", theGame);
+  if (theGame === undefined) {
+    res.send(
+      `there are no boardgames with that index, please enter a number between 1 and 
+      ${boardgames.length}`
+    );
+  } else {
+    res.send(theGame);
+  }
+});
+
 app.listen(3000, () => console.log("Server is live on port 3000!"));
 //test this with "node index.js"
 //test with nodemon index.js for live updates!
