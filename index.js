@@ -7,6 +7,10 @@ const app = express();
 // app.put()
 // app.delete()
 
+/////////////////////////////////////
+//POKEMON
+/////////////////////////////////////
+
 const pokemon = ["charmander", "bulbasaur", "squirtle"];
 
 app.get("/", (req, res) => {
@@ -29,6 +33,15 @@ app.get("/pokemon/post/:yourtext", (req, res) => {
   res.send(req.params.yourtext);
 });
 // simple post the users :yourtext value to the page
+
+////////////////////////////////////
+//BOARDGAMES
+////////////////////////////////////
+
+const boardgames = [
+  { name: "catan", players: "3-6", time: "1hr" },
+  { name: "Small world", players: "2-6", time: "1hr 30mins" },
+];
 
 app.listen(3000, () => console.log("Server is live on port 3000!"));
 //test this with "node index.js"
