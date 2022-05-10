@@ -50,9 +50,8 @@ app.get("/boardgames", (req, res) => {
 
 app.get("/boardgames/:id", (req, res) => {
   const theGame = boardgames[req.params.id - 1];
-  console.log("the game is:", theGame);
   if (theGame === undefined) {
-    res.send(
+    res.status(404).send(
       `there are no boardgames with that index, please enter a number between 1 and 
       ${boardgames.length}`
     );
