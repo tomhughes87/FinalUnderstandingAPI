@@ -6,3 +6,9 @@ const app = express();
 // app.post()
 // app.put()
 // app.delete()
+
+app.get("/", (req, res) => {
+  res.send("Hello!");
+});
+
+app.listen(3000, () => console.log("Server is live!"));
